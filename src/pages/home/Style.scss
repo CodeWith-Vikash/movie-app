@@ -1,0 +1,19 @@
+@import '../../mixins.scss';
+.title{
+    display: flex;
+    margin-top: 5vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5vh;
+    @include md{
+        padding: 0 100px;
+    }
+    h3{
+        font-size: 4vmax;
+        font-weight: 100;
+        @include sm{
+            font-size: 2rem;
+        }
+    }
+}
