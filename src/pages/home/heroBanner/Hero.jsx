@@ -17,6 +17,11 @@ const Hero = () => {
             navigate(`/search/${query}`)
         }
     }
+    const handleSearch=()=>{
+        if(query!=" " && query!=""){
+            navigate(`/search/${query}`)
+        }
+    }
     // console.log(data);
     useEffect(()=>{
         let random=Math.floor(Math.random()*20)
@@ -45,7 +50,7 @@ const Hero = () => {
                  onChange={(e)=> setquery(e.target.value)}
                  onKeyDown={handlekeydown}
                 />
-                <button>search</button>
+                <button onClick={handleSearch}>search</button>
             </div>
         </div>
          </div>
