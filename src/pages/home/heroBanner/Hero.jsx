@@ -23,12 +23,14 @@ const Hero = () => {
         }
     }
     // console.log(data);
-    useEffect(()=>{
-        let random=Math.floor(Math.random()*20)
-        // console.log(random);
-        let bg=url.backdrop+data?.results[random]?.backdrop_path;
-        setbackground(bg)
-    },[data])
+    useEffect(() => {
+        if (data && data.results && data.results.length > 0) {
+            let random = Math.floor(Math.random() * data.results.length);
+            let bg = url.backdrop + (data.results[random]?.backdrop_path || '');
+            setbackground(bg);
+        }
+    }, [data]);
+    
   return (
     <div className="heropage">
         {!loading && 
